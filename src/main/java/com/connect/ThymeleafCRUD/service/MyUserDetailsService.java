@@ -1,29 +1,43 @@
 package com.connect.ThymeleafCRUD.service;
 
-import com.connect.ThymeleafCRUD.dao.UserRepo;
-import com.connect.ThymeleafCRUD.entity.User;
-import com.connect.ThymeleafCRUD.entity.UserPrincipal;
+import com.connect.ThymeleafCRUD.dao.MyUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
+// custom Myuserdetails implemntation with userdetails
 @Service
 public class MyUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private UserRepo repo;
+    private MyUserRepository repository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        User user = repo.findByUsername(username);
-        if (user == null) {
-            System.out.println("User 404");
-            throw new UsernameNotFoundException("Userr 404");
-        }
+        Optional<MyUser> user = repository.findByUsername(username);        // find by username
+        if(user.isPresent()){
+            var userObj = user.get();
+           return User.builder()                                     // custom User
+                    .username(userObj.getUsername())
+                    .password(userObj.getPassword())
+                    .roles(getRoles(userObj))
+                    .build();
 
-        return new UserPrincipal(user);
+        } else{
+            throw new UsernameNotFoundException(username);
+        }
+    }
+
+    private String[] getRoles(MyUser user){
+        if(user.getRole() == null){                     // if role is null return USER if not ADMIN, USER
+            return new String[]{"USER"};
+        }
+        return user.getRole().split(",");
     }
 }
