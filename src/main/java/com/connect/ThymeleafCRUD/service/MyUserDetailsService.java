@@ -1,6 +1,7 @@
 package com.connect.ThymeleafCRUD.service;
 
 import com.connect.ThymeleafCRUD.dao.MyUserRepository;
+import com.connect.ThymeleafCRUD.entity.MyUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

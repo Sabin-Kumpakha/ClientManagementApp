@@ -1,6 +1,6 @@
 package com.connect.ThymeleafCRUD.config;
 
-import com.connect.ThymeleafCRUD.entity.MyUserDetailsService;
+import com.connect.ThymeleafCRUD.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

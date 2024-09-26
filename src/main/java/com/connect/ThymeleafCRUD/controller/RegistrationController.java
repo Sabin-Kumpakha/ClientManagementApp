@@ -1,7 +1,7 @@
 package com.connect.ThymeleafCRUD.controller;
 
-import com.connect.SpringAuth.dao.MyUserRepository;
-import com.connect.SpringAuth.entity.MyUser;
+import com.connect.ThymeleafCRUD.dao.MyUserRepository;
+import com.connect.ThymeleafCRUD.entity.MyUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
