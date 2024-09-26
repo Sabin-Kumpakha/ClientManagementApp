@@ -1,6 +1,6 @@
 package com.connect.ThymeleafCRUD.controller;
 
-import com.connect.ThymeleafCRUD.model.User;
+import com.connect.ThymeleafCRUD.entity.User;
 import com.connect.ThymeleafCRUD.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

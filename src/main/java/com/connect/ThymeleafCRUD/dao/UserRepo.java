@@ -1,6 +1,6 @@
-package com.connect.ThymeleafCRUD.repo;
+package com.connect.ThymeleafCRUD.dao;
 
-import com.connect.ThymeleafCRUD.model.User;
+import com.connect.ThymeleafCRUD.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

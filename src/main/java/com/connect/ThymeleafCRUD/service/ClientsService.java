@@ -1,16 +1,17 @@
 package com.connect.ThymeleafCRUD.service;
 
-import com.connect.ThymeleafCRUD.model.Client;
-import com.connect.ThymeleafCRUD.model.ClientDto;
-import com.connect.ThymeleafCRUD.repo.ClientRepository;
+import java.util.Date;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 
-import java.util.Date;
-import java.util.Optional;
+import com.connect.ThymeleafCRUD.entity.Client;
+import com.connect.ThymeleafCRUD.entity.ClientDto;
+import com.connect.ThymeleafCRUD.dao.ClientRepository;
 
 @Service
 public class ClientsService {

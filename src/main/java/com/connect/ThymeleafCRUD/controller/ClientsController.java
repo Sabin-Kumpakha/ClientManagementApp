@@ -1,7 +1,7 @@
 package com.connect.ThymeleafCRUD.controller;
 
-import com.connect.ThymeleafCRUD.model.Client;
-import com.connect.ThymeleafCRUD.model.ClientDto;
+import com.connect.ThymeleafCRUD.entity.Client;
+import com.connect.ThymeleafCRUD.entity.ClientDto;
 import com.connect.ThymeleafCRUD.service.ClientsService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,8 @@ public class ClientsController {
     @PostMapping("/create")
     public String createClient(@Valid @ModelAttribute ClientDto clientDto, BindingResult result) {
         if (clientService.isEmailTaken(clientDto.getEmail())) {
-            result.addError(new FieldError("clientDto", "email", clientDto.getEmail(), false, null, null, "Email address is already used"));
+            result.addError(new FieldError("clientDto", "email", clientDto.getEmail(),
+                    false, null, null, "Email address is already used"));
         }
 
         if (result.hasErrors()) {

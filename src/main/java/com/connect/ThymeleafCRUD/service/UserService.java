@@ -1,7 +1,7 @@
 package com.connect.ThymeleafCRUD.service;
 
-import com.connect.ThymeleafCRUD.repo.UserRepo;
-import com.connect.ThymeleafCRUD.model.User;
+import com.connect.ThymeleafCRUD.dao.UserRepo;
+import com.connect.ThymeleafCRUD.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

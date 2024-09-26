@@ -1,4 +1,4 @@
-package com.connect.ThymeleafCRUD.model;
+package com.connect.ThymeleafCRUD.entity;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.*;

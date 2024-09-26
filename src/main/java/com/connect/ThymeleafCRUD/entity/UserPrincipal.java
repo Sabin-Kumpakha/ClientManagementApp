@@ -1,4 +1,4 @@
-package com.connect.ThymeleafCRUD.model;
+package com.connect.ThymeleafCRUD.entity;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
